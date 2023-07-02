@@ -5,9 +5,9 @@ from support.exp_checker import *
 from support.driver_init import *
 
 target_position_list = [
-     ('高级销售岗', '武汉', 20),
+     ('大客户销代表', '南京', 20),
      #('销售顾问', '南京', 20),
-     ('大客户代表', '南京', 20),
+     ('高级销售', '南京', 20),
     #('医疗器械销售经理', '南京', 20),
      #('销售顾问', '宣城', 10),
     #('高级销售岗', '开封', 15),
@@ -55,7 +55,7 @@ def find_target(driver, target_resume_num, result_seeker_name):
     old_resumes = []
     resume_num = 0
     while resume_num <= target_resume_num:
-        new_resumes = driver.find_element(By.CLASS_NAME, 'recommend-card-list').find_elements(By.CLASS_NAME,
+        new_resumes = driver.find_element(By.CLASS_NAME, 'card-list').find_elements(By.CLASS_NAME,
                                                                                  'candidate-card-wrap')
         target_resumes = new_resumes[len(old_resumes):]
         if len(target_resumes) == 0:
