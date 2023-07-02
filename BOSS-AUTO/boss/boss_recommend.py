@@ -7,15 +7,15 @@ from support.driver_init import *
 target_position_list = [
      ('大客户销代表', '南京', 20),
      #('销售顾问', '南京', 20),
-     ('高级销售', '南京', 20),
+     ('高级销售岗', '南京', 20),
     #('医疗器械销售经理', '南京', 20),
      #('销售顾问', '宣城', 10),
     #('高级销售岗', '开封', 15),
-    #('高级销售岗', '芜湖', 25),
+    ('高级销售经理', '合肥', 20),
     #('高薪销售岗', '平顶山', 15),
     # ('高级销售经理', '南京', 20),
-    # ('高级销售岗', '郑州', 25),
-    # ('高级销售岗', '武汉', 15),
+     ('高级销售岗', '郑州', 25),
+     ('高级销售经理', '武汉', 15),
     # ('销售岗位', '滁州', 10)
 ]
 
@@ -105,7 +105,7 @@ def find_target(driver, target_resume_num, result_seeker_name):
 
                 try:
                     greet_btn = resume.find_element(By.CLASS_NAME, 'btn-greet')
-                    # ele_click(driver, greet_btn)
+                    ele_click(driver, greet_btn)
                     print('[已匹配][{}]点击打招呼按钮！'.format(seeker_name))
                 except NoSuchElementException:
                     print('[未匹配][{}]未找到打招呼按钮，跳过！'.format(seeker_name))
@@ -133,7 +133,7 @@ def find_target(driver, target_resume_num, result_seeker_name):
 def init_page():
     driver = init_driver()
     driver.get('https://www.zhipin.com/web/chat/recommend')
-    sleep(0.5)
+    sleep(5)
     switch_iframe(driver)
     return driver
 
